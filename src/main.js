@@ -7,18 +7,21 @@ import firebase from 'firebase'
 
 Vue.config.productionTip = false
 
-let app;
+window.$ = require('jquery')
+window.joint = require('jointjs')
+
+let app
 let config = {
-  apiKey: "AIzaSyDVsLk6bMpkYbgyL0g7Y2DSt9F4UCTWQ_o",
-  authDomain: "jaringan-cbc53.firebaseapp.com",
-  databaseURL: "https://jaringan-cbc53.firebaseio.com",
-  projectId: "jaringan-cbc53",
-  storageBucket: "jaringan-cbc53.appspot.com",
-  messagingSenderId: "176595528663"
-};
-firebase.initializeApp(config);
-firebase.auth().onAuthStateChanged((user)=>{
-  if(!app){
+  apiKey: 'AIzaSyDVsLk6bMpkYbgyL0g7Y2DSt9F4UCTWQ_o',
+  authDomain: 'jaringan-cbc53.firebaseapp.com',
+  databaseURL: 'https://jaringan-cbc53.firebaseio.com',
+  projectId: 'jaringan-cbc53',
+  storageBucket: 'jaringan-cbc53.appspot.com',
+  messagingSenderId: '176595528663'
+}
+firebase.initializeApp(config)
+firebase.auth().onAuthStateChanged((user) => {
+  if (!app) {
     /* eslint-disable no-new */
     app = new Vue({
       el: '#app',

@@ -9,24 +9,24 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from 'firebase'
 export default {
-    name:'signUp',
-    data: function(){
-        return{}
-    },
-    methods:{
-      signUp:function() {
-        firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-            (user) => {
-                this.$router.replace('hello')
-            },
-            (err) => {
-                alert('Oops. '+err.message)
-            }
-        );
-      }
+  name: 'signUp',
+  data: function() {
+    return{}
+  },
+  methods: {
+    signUp:function() {
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+        (user) => {
+          this.$router.replace('hello')
+        },
+        (err) => {
+          alert('Oops. '+err.message)
+        }
+      );
     }
+  }
 }
 </script>
 
@@ -50,4 +50,3 @@ span{
   font-size: 11px;
 }
 </style>
-
